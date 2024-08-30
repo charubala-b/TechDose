@@ -1,0 +1,102 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    // 11 . Code Implementation
+    // a . how many set bits are there
+    int num;
+    cin>>num;
+    int count=0;
+    for(int i=0;i<32;i++){
+        if(num&(1<<i)){
+            count++;
+        }
+    }
+    cout<<count;
+    
+    // b. check if ith bit is set or not
+    int num;
+    cin>>num;
+    itn pos;
+    cin<<pos;
+    int flag=0;
+    if(num&(1<<(pos-1))){
+        flag=1;
+        cout<<"set";
+        break;
+    }
+    if(flag==0){
+        cout<<"Not Set";
+    }
+    
+    
+    // c .set the ith bit
+    int num;
+    cin<<num;
+    int pos;
+    cin<<pos;
+    cout<<num|(i<<(pos-1));
+    
+    // d . unset the ith bit
+    int num;
+    cin<<num;
+    int pos;
+    cin<<pos;
+    cout<<num&(~(i<<(pos-1)));
+    
+    // e . generate all possible subsets of array
+    vector<int> arr={2,3,4};
+    int n=arr.size();
+    int allpossi=(1<<n);
+    for(int mask=0;mask<allpossi;mask++){
+        cout<<"{";
+        for(int i=0;i<n;i++){
+            if(mask&(1<<i)){
+                cout<<arr[i];
+            }
+        }
+        cout<<"}";
+    }
+	
+    //f. swapping 2 numbers
+    int a=4;
+    int b=6;
+    a=a^b;
+    b=a^b;
+    a=a^b;
+    cout<<a<<b;
+
+    //g. odd or even
+    int num;
+    cin>>num;
+    if(num&1){
+    	cout<<"ODD";
+    }
+    else{
+	cout<<"EVEN";
+    }
+    
+    //h. Upper to lower case and related problems
+    //for upperto lower
+    string str="CHaru"
+    for(int i=0;i<str.length();i++){
+	str[i]|=(1<<5);
+    }
+    cout<<str;
+    //forlower to upper
+    for(int i=0;i<str.length();i++){
+        str[i]^=(1<<5);
+    }
+    cout<<str;
+    
+   //I. Toggle the bit  
+   int num;
+   cin>>num;
+   int pos;
+   cin>>pos;
+   num^=(1<<pos);
+   cout<<num;
+
+   return 0;
+}
